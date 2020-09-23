@@ -1,0 +1,55 @@
+<!doctype html >
+<html lang="en" xmlns:th="http://thymeleaf.org/">
+<head>
+    <title>myBlog</title>
+    <!--CSS-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <!--Icons-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet">
+</head>
+<body>
+<header>
+
+</header>
+<nav class="navbar navbar-light bg-light">
+    <span class="navbar-brand mb-0 h1">myBlog</span>
+</nav>
+
+
+<main>
+    <div class="container">
+
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb" style="background-color: white; padding: 30px">
+                <li class="breadcrumb-item active" aria-current="page"><a href="/posts">Posts</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Post</li>
+            </ol>
+        </nav>
+
+       <article>
+           <h1 class="card-title" style="font-weight: bold; margin-bottom: 20px">
+               <span  th:text="${post.title}"></span>
+           </h1>
+
+           <p class="card-subtitle mb-2 text-muted">
+                <i class="material-icons">person_outline</i>
+               <span th:text="${post.author}"></span>
+               <br>
+               <i class="material-icons">date_range</i>
+               <span th:text="${post.date}"></span>
+           </p>
+
+           <section>
+               <p class="card-text" style="margin-top: 40px">
+                   <span th:utext="${post.text}"></span>
+               </p>
+           </section>
+       </article>
+
+    </div>
+</main>
+
+</body>
+</html>
