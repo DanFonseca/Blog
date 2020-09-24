@@ -1,24 +1,25 @@
 package br.com.daniel.spring.blog.model
 
 import com.fasterxml.jackson.annotation.JsonFormat
-import org.jetbrains.annotations.NotNull
 import java.time.LocalDate
 import javax.persistence.*
+import javax.validation.constraints.NotBlank
 
 @Entity
 @Table(name = "TB_POST")
 data class Post(
-        @NotNull
+
+        @field:NotBlank
         val title: String,
 
-        @NotNull
+        @field:NotBlank
         val author: String,
 
         @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
-        val date: LocalDate,
+        var date: LocalDate?,
 
-        @NotNull
         @Lob
+        @field:NotBlank
         val text: String
 ) {
 

@@ -1,0 +1,51 @@
+<!doctype html >
+<html xmlns:th="http://thymeleaf.org/">
+<head>
+    <title>myBlog</title>
+    <!--CSS-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+<body>
+<header>
+
+</header>
+<nav class="navbar navbar-light bg-light">
+    <span class="navbar-brand mb-0 h1">myBlog</span>
+    <a type="button" class="btn btn-success" href="/posts/newpost">Novo Post</a>
+</nav>
+<section>
+    <div class="container" style="width: 60%; padding-bottom:  60px">
+
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb" style="background-color: white; padding: 30px">
+                <li class="breadcrumb-item" aria-current="page"><a href="/posts">Posts</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Novo Post</li>
+            </ol>
+        </nav>
+        <div>
+
+            <th:block  th:include="mensagemValidacao"></th:block>
+
+            <form method="post">
+                <div class="input-group input-group-sm mb-2">
+                    <input type="text" class="form-control" name="author" placeholder="Autor">
+                </div>
+
+                <div class="input-group input-group-sm mb-2">
+                    <input type="text" class="form-control" name="title" placeholder="Titulo">
+                </div>
+
+                <div class="form-group">
+                    <label for="textArea">Texto</label>
+                    <textarea class="form-control" id="textArea" name="text" rows="3"></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Cadastrar Post</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>
