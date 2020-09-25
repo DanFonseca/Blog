@@ -43,7 +43,7 @@ class PostController(val blogService: BlogService) {
             return RedirectView("/posts/newpost")
         }
         post.date = LocalDate.now()
-        blogService.save(post);
-        return RedirectView("/posts");
+        blogService.save(post)
+        return RedirectView("/posts")
     }
 }
